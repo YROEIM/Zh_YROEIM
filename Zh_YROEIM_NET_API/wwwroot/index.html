@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="eredmeny">
+        <script>
+            fetch("textbook/osszes")
+                .then(response => response.json)
+                .then(data => kiiratas(data))
+
+            function kiiratas(lista) {
+
+                for (var i = 0; i < lista.length; i++) {
+                    let ujelem = document.createElement("div")
+                    ujelem.innerText = lista[i]
+                    document.getElementById("eredmeny").appendChild(ujelem)
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
